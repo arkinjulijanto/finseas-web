@@ -168,31 +168,59 @@ img { display: block; max-width: 100%; }
 .phone__notch { position: absolute; top: 14px; left: 50%; transform: translateX(-50%); width: 36%; height: 22px; background: var(--text); border-radius: var(--r-pill); z-index: 3; opacity: 0.92; }
 .phone__screen { height: 100%; border-radius: 34px; overflow: hidden; background: var(--bg); }
 
-.app { display: flex; flex-direction: column; gap: 12px; height: 100%; padding: 30px 16px 16px; }
-.app__top { display: flex; align-items: center; justify-content: space-between; }
-.app__hello { font-size: 0.74rem; color: var(--text-muted); }
-.app__avatar { width: 26px; height: 26px; border-radius: var(--r-pill); background: var(--accent-soft); color: var(--accent-ink); display: grid; place-items: center; font-size: 0.72rem; font-weight: 600; }
+.app { display: flex; flex-direction: column; height: 100%; }
+.app__scroll { flex: 1; display: flex; flex-direction: column; gap: 11px; padding: 30px 15px 12px; overflow: hidden; }
 
-.app__balance { display: flex; flex-direction: column; gap: 3px; padding: 14px; border-radius: var(--r-card); background: var(--surface); box-shadow: var(--shadow-card); }
-.app__balance-label { font-family: var(--font-mono); font-size: 0.56rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); }
-.app__balance-value { font-size: 1.7rem; font-weight: 600; letter-spacing: -0.04em; }
-.app__cents { color: var(--text-muted); font-size: 1.1rem; }
-.app__delta { font-size: 0.62rem; color: var(--positive); font-weight: 500; }
+/* Header */
+.app__head { display: flex; align-items: flex-start; justify-content: space-between; }
+.app__greet { display: block; font-family: var(--font-mono); font-size: 0.5rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); }
+.app__name { display: block; font-size: 1.25rem; font-weight: 600; letter-spacing: -0.03em; margin-top: 2px; }
+.app__icons { display: flex; gap: 6px; }
+.app__icon { width: 28px; height: 28px; border-radius: 10px; border: 1px solid var(--border); background: var(--surface); display: grid; place-items: center; color: var(--text); }
+.app__icon svg { width: 14px; height: 14px; }
 
-.app__bars { display: flex; align-items: flex-end; gap: 6px; height: 56px; padding: 10px 4px 0; }
-.app__bars span { flex: 1; height: var(--h); background: var(--surface-sunk); border-radius: 4px; }
-.app__bars .is-now { background: var(--accent); }
+/* Net balance hero card (gradient, like the app) */
+.app__bal { display: flex; flex-direction: column; padding: 14px; border-radius: var(--r-hero); border: 1px solid var(--border); background: linear-gradient(180deg, var(--hero-from), var(--hero-to)); box-shadow: var(--shadow-card); }
+.app__bal-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+.app__kicker { font-family: var(--font-mono); font-size: 0.5rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--text-muted); }
+.app__pill { display: inline-flex; align-items: center; gap: 0.3em; font-family: var(--font-mono); font-size: 0.5rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); border: 1px solid var(--border); border-radius: var(--r-pill); padding: 2px 7px; }
+.app__pill--accent { color: var(--accent-ink); background: var(--accent-soft); border-color: transparent; }
+.app__bal-num { font-size: 1.85rem; font-weight: 600; letter-spacing: -0.045em; line-height: 1.05; }
+.app__bal-c { color: var(--text-muted); font-size: 1.1rem; }
+.app__split { display: flex; align-items: center; gap: 12px; margin-top: 12px; }
+.app__split-col { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+.app__split-div { width: 1px; height: 26px; background: var(--border); }
+.app__split-lbl { display: flex; align-items: center; gap: 4px; font-size: 0.55rem; color: var(--text-muted); }
+.app__arr { font-style: normal; color: var(--text-mid); }
+.app__arr--in { color: var(--positive); }
+.app__split-val { font-size: 0.86rem; font-weight: 600; letter-spacing: -0.02em; }
 
-.app__row-head { display: flex; justify-content: space-between; align-items: baseline; margin-top: 2px; }
-.app__row-head > span:first-child { font-weight: 600; font-size: 0.8rem; }
-.app__see { font-size: 0.6rem; color: var(--accent); font-weight: 500; }
+/* Cards */
+.app__card { padding: 13px; border-radius: var(--r-card); border: 1px solid var(--border); background: var(--surface); box-shadow: var(--shadow-card); }
+.app__card-head { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 8px; }
+.app__card-title { display: block; font-size: 0.8rem; font-weight: 600; margin-top: 3px; }
+.app__spark { width: 100%; height: 50px; display: block; }
 
-.app__txns { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-.app__txns li { display: flex; align-items: center; gap: 10px; padding: 8px; border-radius: var(--r-md); background: var(--surface); box-shadow: var(--shadow-card); }
+/* Recent list */
+.app__list-head { display: flex; justify-content: space-between; align-items: baseline; margin-top: 2px; }
+.app__list-title { font-weight: 600; font-size: 0.82rem; letter-spacing: -0.02em; }
+.app__see { font-size: 0.56rem; color: var(--text-muted); font-family: var(--font-mono); letter-spacing: 0.04em; }
+
+.app__txns { list-style: none; display: flex; flex-direction: column; border-radius: var(--r-card); border: 1px solid var(--border); background: var(--surface); box-shadow: var(--shadow-card); overflow: hidden; }
+.app__txns li { display: flex; align-items: center; gap: 10px; padding: 9px 11px; }
+.app__txns li + li { border-top: 1px solid var(--border); }
 .txn__name { display: flex; flex-direction: column; font-size: 0.76rem; font-weight: 500; flex: 1; }
-.txn__name small { font-size: 0.58rem; color: var(--text-muted); font-weight: 400; }
+.txn__name small { font-size: 0.56rem; color: var(--text-muted); font-weight: 400; margin-top: 1px; }
 .txn__amt { font-size: 0.78rem; font-weight: 600; letter-spacing: -0.02em; }
 .txn__amt--pos { color: var(--positive); }
+
+/* Bottom tab bar */
+.app__tabs { display: flex; align-items: center; justify-content: space-around; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); border-top: 1px solid var(--border); background: var(--surface); }
+.app__tab { color: var(--text-muted); display: grid; place-items: center; }
+.app__tab svg { width: 18px; height: 18px; }
+.app__tab.is-active { color: var(--accent); }
+.app__tab--fab { width: 34px; height: 34px; border-radius: 12px; background: var(--accent); color: #fff; box-shadow: var(--shadow-card); }
+.app__tab--fab svg { width: 16px; height: 16px; }
 
 /* Category chips — shared between phone + bento */
 .chip {
@@ -226,15 +254,11 @@ img { display: block; max-width: 100%; }
 .tile:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--border-hard); }
 .tile--wide { grid-column: span 2; }
 .tile__num { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em; color: var(--accent); margin-bottom: auto; }
-.tile__finsi { font-size: 1.4rem; color: var(--accent); margin-bottom: auto; }
 .tile__title { font-size: var(--text-h3); font-weight: 600; letter-spacing: -0.02em; margin-top: 1.4rem; }
 .tile__body { margin-top: 0.55rem; color: var(--text-mid); font-size: 0.97rem; }
 .tile__chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: auto; }
 
 .tile--accent { background: linear-gradient(155deg, var(--accent-soft), var(--surface)); }
-.tile--ink { background: var(--text); color: var(--bg); border-color: transparent; }
-.tile--ink .tile__body { color: color-mix(in srgb, var(--bg) 72%, var(--text-muted)); }
-.tile--ink .tile__finsi { color: var(--accent); }
 
 /* ── Closing CTA band ─────────────────────────────────── */
 .cta-band { position: relative; overflow: hidden; margin: 0 var(--gutter) clamp(2rem, 4vw, 4rem); border-radius: var(--r-hero); background: var(--accent); color: #fff; }
