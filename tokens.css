@@ -1,0 +1,124 @@
+/* ============================================================
+   FinSeas — Web design tokens
+   Ported 1:1 from the mobile app's "Sage" system
+   (src/theme/tokens.ts + src/theme/index.tsx).
+   Light is the designed default; dark mirrors the app theme.
+   ============================================================ */
+
+:root {
+  /* ── Sage · Light ─────────────────────────────────────── */
+  --bg: #f2f2ee;
+  --surface: #ffffff;
+  --surface-alt: #eaeae3;
+  --surface-sunk: #e4e4dc;
+  --text: #12201a;
+  --text-mid: #36433d;
+  --text-muted: #6e6f69;
+  --border: #deded5;
+  --border-hard: #cfcfc3;
+  --accent: #2f6e48;
+  --accent-soft: #ddede2;
+  --accent-ink: #1b4a2d;
+  --positive: #2f6e48;
+  --negative: #a93a2a;
+  --warning: #a86a1a;
+
+  --hero-from: #ffffff;
+  --hero-to: #ebefe8;
+
+  /* 2-layer soft shadows (approximating the app's elevation) */
+  --shadow-card: 0 1px 2px rgba(18, 32, 26, 0.04), 0 4px 12px rgba(18, 32, 26, 0.07);
+  --shadow-lg: 0 2px 6px rgba(18, 32, 26, 0.06), 0 14px 28px rgba(18, 32, 26, 0.13);
+  --ring: 0 0 0 3px rgba(47, 110, 72, 0.22);
+
+  /* Category chips — soft bg / saturated fg pairs (light) */
+  --cat-coffee-bg: #ffdcd4;        --cat-coffee-fg: #822d22;
+  --cat-transit-bg: #cbedff;       --cat-transit-fg: #005387;
+  --cat-travel-bg: #c2f3f2;        --cat-travel-fg: #005f61;
+  --cat-shopping-bg: #e7e3ff;      --cat-shopping-fg: #4e3e89;
+  --cat-bills-bg: #ffdbe0;         --cat-bills-fg: #812a3e;
+  --cat-fun-bg: #fcdcf8;           --cat-fun-fg: #70306c;
+  --cat-health-bg: #d1f2d7;        --cat-health-fg: #005e26;
+  --cat-salary-bg: #d7f1d1;        --cat-salary-fg: #225c13;
+
+  /* ── Typography ───────────────────────────────────────── */
+  --font-sans: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  --text-hero: clamp(2.6rem, 1.2rem + 5.4vw, 5.25rem);
+  --text-h2: clamp(1.9rem, 1.2rem + 2.6vw, 3rem);
+  --text-h3: clamp(1.15rem, 1rem + 0.5vw, 1.35rem);
+  --text-body: clamp(1rem, 0.96rem + 0.2vw, 1.1rem);
+  --text-mono-kicker: 0.66rem;
+
+  /* ── Radii (from tokens.ts) ───────────────────────────── */
+  --r-sm: 9px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 18px;
+  --r-card: 20px;
+  --r-hero: 28px;
+  --r-pill: 100px;
+
+  /* ── Rhythm & motion ──────────────────────────────────── */
+  --space-section: clamp(4.5rem, 3rem + 6vw, 9rem);
+  --maxw: 1180px;
+  --gutter: clamp(1.25rem, 0.5rem + 3vw, 3rem);
+
+  --dur-fast: 160ms;
+  --dur: 280ms;
+  --dur-slow: 620ms;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+  color-scheme: light;
+}
+
+/* ── Sage · Dark (mirrors the app) ──────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e1411;
+    --surface: #181f1a;
+    --surface-alt: #1f2722;
+    --surface-sunk: #0b100d;
+    --text: #ecece5;
+    --text-mid: #b4bab1;
+    --text-muted: #787c73;
+    --border: #262e28;
+    --border-hard: #333a34;
+    --accent: #6fb68b;
+    --accent-soft: #1b2a21;
+    --accent-ink: #a2d5b5;
+    --positive: #6fb68b;
+    --negative: #e27b6a;
+    --warning: #e2b26b;
+
+    --hero-from: #1b221c;
+    --hero-to: #11181c;
+
+    --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.45);
+    --shadow-lg: 0 2px 6px rgba(0, 0, 0, 0.4), 0 16px 28px rgba(0, 0, 0, 0.6);
+    --ring: 0 0 0 3px rgba(111, 182, 139, 0.3);
+
+    --cat-coffee-bg: #331511;        --cat-coffee-fg: #ff9c8b;
+    --cat-transit-bg: #042234;       --cat-transit-fg: #66c8ff;
+    --cat-travel-bg: #002627;        --cat-travel-fg: #2ad7d7;
+    --cat-shopping-bg: #1f1b35;      --cat-shopping-fg: #bdafff;
+    --cat-bills-bg: #33141a;         --cat-bills-fg: #ff99ab;
+    --cat-fun-bg: #2c162a;           --cat-fun-fg: #ed9ee5;
+    --cat-health-bg: #0b2612;        --cat-health-fg: #7cd591;
+    --cat-salary-bg: #11250d;        --cat-salary-fg: #90d281;
+
+    color-scheme: dark;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -3,67 +3,226 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FinSeas – Personal Finance, Simplified</title>
-  <meta name="description" content="FinSeas is a mobile app that helps you track spending, manage budgets, and understand your money with clarity.">
+  <title>FinSeas — Personal finance, made calm</title>
+  <meta name="description" content="FinSeas helps you log spending in seconds, set budgets that stick, and understand your money with AI — across every currency. A mobile app for iOS and Android.">
+  <meta name="theme-color" content="#2f6e48">
+  <meta property="og:title" content="FinSeas — Personal finance, made calm">
+  <meta property="og:description" content="Log spending in seconds, set budgets that stick, and let Finsi explain your money. iOS & Android.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/logo.png">
+
   <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tokens.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="logo-wrap">
-        <img src="assets/logo.png" alt="FinSeas logo" width="120" height="120">
-      </div>
-      <h1>FinSeas</h1>
-      <p>Track spending, set budgets, and see your finances in one place. FinSeas is a mobile-only app that keeps your money simple and transparent.</p>
-    </header>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="privacy.html">Privacy Policy</a></li>
-        <li><a href="terms.html">Terms of Service</a></li>
-      </ul>
+  <!-- ░░ Top bar ░░ -->
+  <header class="topbar" aria-label="Primary">
+    <a class="brand" href="index.html">
+      <img class="brand__mark" src="assets/logo.png" alt="" width="34" height="34">
+      <span class="brand__word">FinSeas</span>
+    </a>
+    <nav class="topnav" aria-label="Main navigation">
+      <a href="#features">Features</a>
+      <a href="#preview">The app</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="#get" class="topnav__cta">Get the app</a>
     </nav>
+  </header>
 
-    <main>
-      <section class="download-buttons">
-        <a href="#" class="btn" aria-label="Download on the App Store">App Store (coming soon)</a>
-        <a href="#" class="btn btn-secondary" aria-label="Get it on Google Play">Google Play (coming soon)</a>
-      </section>
+  <main id="main">
+    <!-- ░░ Hero ░░ -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <!-- Signature iso-line field, ported from the app's AuthScreen hero -->
+      <svg class="hero__lines" viewBox="0 0 400 360" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <g fill="none" stroke="var(--border-hard)" stroke-width="1">
+          <!-- 12 stacked iso-curves: M -40 (80+i*28) Q 100 (40+i*28) 240 (110+i*28) T 480 (80+i*28) -->
+          <path d="M -40 80 Q 100 40 240 110 T 480 80"  opacity="0.450"/>
+          <path d="M -40 108 Q 100 68 240 138 T 480 108" opacity="0.425"/>
+          <path d="M -40 136 Q 100 96 240 166 T 480 136" opacity="0.400"/>
+          <path d="M -40 164 Q 100 124 240 194 T 480 164" opacity="0.375"/>
+          <path d="M -40 192 Q 100 152 240 222 T 480 192" opacity="0.350"/>
+          <path d="M -40 220 Q 100 180 240 250 T 480 220" opacity="0.325"/>
+          <path d="M -40 248 Q 100 208 240 278 T 480 248" opacity="0.300"/>
+          <path d="M -40 276 Q 100 236 240 306 T 480 276" opacity="0.275"/>
+          <path d="M -40 304 Q 100 264 240 334 T 480 304" opacity="0.250"/>
+          <path d="M -40 332 Q 100 292 240 362 T 480 332" opacity="0.225"/>
+          <path d="M -40 360 Q 100 320 240 390 T 480 360" opacity="0.200"/>
+          <path d="M -40 388 Q 100 348 240 418 T 480 388" opacity="0.175"/>
+        </g>
+      </svg>
 
-      <section class="features">
-        <h2>What FinSeas does</h2>
-        <ul>
-          <li>Connect your accounts and see balances in one view</li>
-          <li>Set budgets and get gentle reminders</li>
-          <li>Track spending by category</li>
-          <li>Sign in securely with your Google account</li>
-        </ul>
-      </section>
+      <div class="hero__inner shell">
+        <div class="hero__copy">
+          <span class="kicker">Personal finance · iOS &amp; Android</span>
+          <h1 id="hero-heading" class="hero__title">
+            Your money,<br><span class="hero__title-accent">made calm.</span>
+          </h1>
+          <p class="hero__lede">
+            Log a transaction in seconds. Let AI categorise it. See budgets, trends,
+            and a weekly report that actually makes sense — in every currency you spend.
+          </p>
 
-      <section class="screenshots">
-        <h2>Screenshots</h2>
-        <div class="screenshots-grid">
-          <!-- Add screenshot images to assets/screenshots/ when available -->
-          <!-- <img src="assets/screenshots/screen1.png" alt="FinSeas dashboard"> -->
-          <p class="screenshots-placeholder">Screenshots will appear here once the app is in the stores.</p>
+          <div class="cta-row" id="get">
+            <a class="btn btn--primary" href="#get" aria-label="Download on the App Store (coming soon)">
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M16.4 12.9c0-2.1 1.7-3.1 1.8-3.2-1-1.4-2.5-1.6-3-1.6-1.3-.1-2.5.8-3.2.8s-1.7-.7-2.8-.7c-1.4 0-2.7.8-3.5 2.1-1.5 2.6-.4 6.4 1.1 8.5.7 1 1.5 2.2 2.6 2.1 1-.04 1.4-.7 2.7-.7s1.6.7 2.7.6c1.1-.02 1.8-1 2.5-2 .8-1.2 1.1-2.3 1.1-2.3-.02-.02-2.2-.84-2.3-3.4zM14.3 6.5c.6-.7 1-1.7.9-2.7-.9.04-1.9.6-2.5 1.3-.5.6-1 1.6-.9 2.6 1 .07 1.9-.5 2.5-1.2z"/></svg>
+              <span><small>Download on the</small>App Store</span>
+            </a>
+            <a class="btn btn--ghost" href="#get" aria-label="Get it on Google Play (coming soon)">
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="#34a853" d="M3.6 21.4 13 12 3.6 2.6c-.3.2-.5.6-.5 1.1v16.6c0 .5.2.9.5 1.1z" opacity=".9"/><path fill="#ea4335" d="M16.8 8.8 13 12l-9.4 9.4c.4.3.9.3 1.5 0l11.7-6.7z" opacity=".9"/><path fill="#fbbc04" d="M20.3 10.6 16.8 8.8 13 12l3.8 3.2 3.5-1.8c.8-.5.8-1.5 0-2z"/><path fill="#4285f4" d="M3.6 2.6 13 12l3.8-3.2L5.1 2.1c-.6-.3-1.1-.3-1.5.5z" opacity=".9"/></svg>
+              <span><small>Get it on</small>Google Play</span>
+            </a>
+          </div>
+
+          <ul class="trust" aria-label="Privacy guarantees">
+            <li><svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Encrypted</li>
+            <li><svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/></svg>Private by default</li>
+            <li><svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Biometric login</li>
+          </ul>
         </div>
-      </section>
 
-      <section class="contact">
-        <h2>Contact</h2>
-        <p>Questions or feedback? Email us at <a href="mailto:support@arkin-dev.com">support@arkin-dev.com</a>.</p>
-      </section>
-    </main>
+        <!-- Recreated app UI — phone mockup (no screenshots needed) -->
+        <div class="hero__device" id="preview" aria-hidden="true">
+          <div class="phone">
+            <div class="phone__notch"></div>
+            <div class="phone__screen">
+              <div class="app">
+                <div class="app__top">
+                  <span class="app__hello">Good evening, Arkin</span>
+                  <span class="app__avatar">A</span>
+                </div>
+                <div class="app__balance">
+                  <span class="app__balance-label">Spendable this month</span>
+                  <span class="app__balance-value">$2,418<span class="app__cents">.50</span></span>
+                  <span class="app__delta">▼ 12% vs last month</span>
+                </div>
 
-    <footer>
-      <p>
-        <a href="privacy.html">Privacy Policy</a> ·
-        <a href="terms.html">Terms of Service</a>
-      </p>
-      <p>© FinSeas. All rights reserved.</p>
-    </footer>
-  </div>
+                <div class="app__bars">
+                  <span style="--h:38%"></span><span style="--h:62%"></span>
+                  <span style="--h:48%"></span><span style="--h:80%"></span>
+                  <span class="is-now" style="--h:54%"></span><span style="--h:30%"></span>
+                  <span style="--h:44%"></span>
+                </div>
+
+                <div class="app__row-head">
+                  <span>Recent</span><span class="app__see">See all</span>
+                </div>
+                <ul class="app__txns">
+                  <li>
+                    <span class="chip chip--coffee">☕</span>
+                    <span class="txn__name">Blue Bottle<small>Coffee</small></span>
+                    <span class="txn__amt">−$6.20</span>
+                  </li>
+                  <li>
+                    <span class="chip chip--transit">🚆</span>
+                    <span class="txn__name">MRT Pass<small>Transit</small></span>
+                    <span class="txn__amt">−$24.00</span>
+                  </li>
+                  <li>
+                    <span class="chip chip--salary">💸</span>
+                    <span class="txn__name">Payday<small>Salary</small></span>
+                    <span class="txn__amt txn__amt--pos">+$3,200</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="device__glow"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ Features — editorial bento ░░ -->
+    <section class="features shell" id="features" aria-labelledby="features-heading">
+      <div class="section-head">
+        <span class="kicker">What it does</span>
+        <h2 id="features-heading" class="section-title">Less spreadsheet.<br>More clarity.</h2>
+      </div>
+
+      <div class="bento">
+        <article class="tile tile--wide tile--accent">
+          <div class="tile__chips" aria-hidden="true">
+            <span class="chip chip--coffee">Coffee</span>
+            <span class="chip chip--transit">Transit</span>
+            <span class="chip chip--shopping">Shopping</span>
+            <span class="chip chip--bills">Bills</span>
+            <span class="chip chip--health">Health</span>
+          </div>
+          <h3 class="tile__title">Every spend, the right colour</h3>
+          <p class="tile__body">AI sorts each transaction into a category with its own hue, so you recognise where your money goes at a glance — no manual tagging.</p>
+        </article>
+
+        <article class="tile">
+          <span class="tile__num">01</span>
+          <h3 class="tile__title">Budgets that nudge</h3>
+          <p class="tile__body">Set a monthly limit and FinSeas keeps it gently in view, with a reminder before you cross it.</p>
+        </article>
+
+        <article class="tile">
+          <span class="tile__num">02</span>
+          <h3 class="tile__title">Every currency</h3>
+          <p class="tile__body">Spend in dollars, rupiah, or euros — live rates fold it all into one honest number.</p>
+        </article>
+
+        <article class="tile tile--ink">
+          <span class="tile__finsi" aria-hidden="true">✦</span>
+          <h3 class="tile__title">Ask Finsi anything</h3>
+          <p class="tile__body">“Why was last week pricey?” Your AI companion reads your data and answers in plain language.</p>
+        </article>
+
+        <article class="tile tile--wide">
+          <span class="tile__num">03</span>
+          <h3 class="tile__title">A weekly report worth reading</h3>
+          <p class="tile__body">Every week, a short AI write-up of what changed, what to watch, and one thing to try — delivered the moment it’s ready.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ░░ Closing CTA band ░░ -->
+    <section class="cta-band" aria-labelledby="cta-heading">
+      <svg class="cta-band__lines" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="1">
+          <path d="M -40 40 Q 100 8 240 64 T 480 40" opacity=".4"/>
+          <path d="M -40 72 Q 100 40 240 96 T 480 72" opacity=".32"/>
+          <path d="M -40 104 Q 100 72 240 128 T 480 104" opacity=".24"/>
+          <path d="M -40 136 Q 100 104 240 160 T 480 136" opacity=".16"/>
+        </g>
+      </svg>
+      <div class="cta-band__inner shell">
+        <h2 id="cta-heading" class="cta-band__title">Start spending with intention.</h2>
+        <p class="cta-band__sub">Free to use. Premium AI when you want more depth.</p>
+        <div class="cta-row cta-row--center">
+          <a class="btn btn--primary" href="#get">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M16.4 12.9c0-2.1 1.7-3.1 1.8-3.2-1-1.4-2.5-1.6-3-1.6-1.3-.1-2.5.8-3.2.8s-1.7-.7-2.8-.7c-1.4 0-2.7.8-3.5 2.1-1.5 2.6-.4 6.4 1.1 8.5.7 1 1.5 2.2 2.6 2.1 1-.04 1.4-.7 2.7-.7s1.6.7 2.7.6c1.1-.02 1.8-1 2.5-2 .8-1.2 1.1-2.3 1.1-2.3-.02-.02-2.2-.84-2.3-3.4zM14.3 6.5c.6-.7 1-1.7.9-2.7-.9.04-1.9.6-2.5 1.3-.5.6-1 1.6-.9 2.6 1 .07 1.9-.5 2.5-1.2z"/></svg>
+            <span><small>Download on the</small>App Store</span>
+          </a>
+          <a class="btn btn--ghost btn--on-band" href="#get">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="#34a853" d="M3.6 21.4 13 12 3.6 2.6c-.3.2-.5.6-.5 1.1v16.6c0 .5.2.9.5 1.1z"/><path fill="#ea4335" d="M16.8 8.8 13 12l-9.4 9.4c.4.3.9.3 1.5 0l11.7-6.7z"/><path fill="#fbbc04" d="M20.3 10.6 16.8 8.8 13 12l3.8 3.2 3.5-1.8c.8-.5.8-1.5 0-2z"/><path fill="#4285f4" d="M3.6 2.6 13 12l3.8-3.2L5.1 2.1c-.6-.3-1.1-.3-1.5.5z"/></svg>
+            <span><small>Get it on</small>Google Play</span>
+          </a>
+        </div>
+        <p class="cta-band__note">App Store &amp; Google Play — coming soon.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer shell">
+    <div class="site-footer__brand">
+      <img src="assets/logo.png" alt="" width="30" height="30">
+      <span>FinSeas</span>
+    </div>
+    <nav class="site-footer__nav" aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="mailto:support@arkin-dev.com">support@arkin-dev.com</a>
+    </nav>
+    <p class="site-footer__legal">© 2026 FinSeas. Crafted for calmer money.</p>
+  </footer>
 </body>
 </html>

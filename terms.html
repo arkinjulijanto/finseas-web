@@ -3,27 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Terms of Service – FinSeas</title>
+  <title>Terms of Service — FinSeas</title>
+  <meta name="theme-color" content="#2f6e48">
   <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tokens.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <a href="index.html"><img src="assets/logo.png" alt="FinSeas" width="80" height="80"></a>
-      <h1>Terms of Service</h1>
-    </header>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="privacy.html">Privacy Policy</a></li>
-        <li><a href="terms.html">Terms of Service</a></li>
-      </ul>
+  <header class="topbar" aria-label="Primary">
+    <a class="brand" href="index.html">
+      <img class="brand__mark" src="assets/logo.png" alt="" width="34" height="34">
+      <span class="brand__word">FinSeas</span>
+    </a>
+    <nav class="topnav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="index.html#get" class="topnav__cta">Get the app</a>
     </nav>
+  </header>
 
-    <article class="legal-content">
-      <span class="last-updated">Last Updated: February 14, 2025</span>
+  <main id="main" class="shell">
+    <article class="legal">
+      <a class="legal__back" href="index.html">← Back to home</a>
+      <h1>Terms of Service</h1>
+      <span class="legal__meta">Last Updated · February 14, 2025</span>
 
       <h2>1. Introduction and Acceptance</h2>
       <p>Welcome to FinSeas ("App," "we," "our," or "us"). These Terms of Service ("Terms") govern your access to and use of our mobile application.</p>
@@ -149,11 +158,20 @@
 
       <p><strong>By using FinSeas, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.</strong></p>
     </article>
+  </main>
 
-    <footer>
-      <p><a href="index.html">Home</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a></p>
-      <p>© FinSeas. All rights reserved.</p>
-    </footer>
-  </div>
+  <footer class="site-footer shell">
+    <div class="site-footer__brand">
+      <img src="assets/logo.png" alt="" width="30" height="30">
+      <span>FinSeas</span>
+    </div>
+    <nav class="site-footer__nav" aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="mailto:support@arkin-dev.com">support@arkin-dev.com</a>
+    </nav>
+    <p class="site-footer__legal">© 2026 FinSeas. Crafted for calmer money.</p>
+  </footer>
 </body>
 </html>
